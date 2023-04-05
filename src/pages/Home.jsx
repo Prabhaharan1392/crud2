@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Home = () => {
   const [inputs, setInputs] = useState({
-    name: "",
-    email: "",
+    name: '',
+    email: '',
   });
   const [tableData, setTableData] = useState([]);
   const [editClick, setEditClick] = useState(false);
-  const [editIndex, setEditIndex] = useState("");
+  const [editIndex, setEditIndex] = useState('');
   const handleChange = (e) => {
     setInputs({
       ...inputs,
@@ -23,14 +23,14 @@ const Home = () => {
       setTableData([...tempTableData]);
       setEditClick(false);
       setInputs({
-        name: "",
-        email: "",
+        name: '',
+        email: '',
       });
     } else {
       setTableData([...tableData, inputs]);
       setInputs({
-        name: "",
-        email: "",
+        name: '',
+        email: '',
       });
     }
   };
@@ -48,7 +48,7 @@ const Home = () => {
   };
   return (
     <div className="min-h-screen bg-[#004b43]">
-      <h1 className="text-center">Crud App</h1>
+      <h1 className="text-center">Student Details</h1>
       <div className="bg-[#e5e4e4] max-w-fit m-auto p-10">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col">
@@ -60,7 +60,7 @@ const Home = () => {
             <input name="email" value={inputs.email} onChange={handleChange} />
           </div>
           <button type="submit" className="w-full bg-[#014d64] text-white mt-3">
-            {editClick ? "update" : "Add"}
+            {editClick ? 'update' : 'Add'}
           </button>
         </form>
       </div>
